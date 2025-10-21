@@ -551,3 +551,75 @@ body.revealed .layer{ opacity:1; pointer-events:auto; transition:opacity .7s eas
   .ringlight{ left:8vw; transform: scale(.92) }
   .chat-toast{ left:4vw; right:4vw; bottom:8vh }
 }
+
+/* ====== ANTI-OVERLAP: móviles pequeños ====== */
+@media (max-width: 520px){
+  /* Live card arriba a la derecha */
+  .live-card{
+    top: 10vh;          /* antes estaba bottom:12vh; */
+    right: 4vw;
+    bottom: auto;
+    min-width: 230px;
+  }
+
+  /* Toast anclado abajo, con safe-area y ancho fluido */
+  .chat-toast{
+    left: 4vw;
+    right: 4vw;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10px);
+    max-width: none;
+    transform: none; /* evita que se esconda con translate en espacios reducidos */
+  }
+
+  /* Textos un pelín más compactos para que quepa todo mejor */
+  .chat-toast .msg{ font-size: 0.95rem; }
+  .live-card small{ font-size: 0.9rem; }
+}
+
+/* ====== Teléfonos medianos (por si aún estaban cerca) ====== */
+@media (min-width: 521px) and (max-width: 768px){
+  .live-card{
+    right: 5vw;
+    bottom: 20vh; /* sube un poco la card para dejar aire al toast */
+  }
+  .chat-toast{
+    left: 5vw;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+  }
+}
+
+/* ====== Evitar que el toast tape al gato ====== */
+/* Pantallas medianas: sube el toast a la parte superior izquierda */
+@media (min-width: 700px) and (max-width: 899px){
+  .chat-toast{
+    top: 16vh;
+    left: 5vw;
+    right: auto;
+    bottom: auto;
+    max-width: 380px;
+    transform: none;
+  }
+  .live-card{
+    top: auto;
+    right: 5vw;
+    bottom: 16vh; /* deja aire respecto al piso */
+  }
+}
+
+/* Escritorio / grandes: aún más arriba y con aire fijo */
+@media (min-width: 900px){
+  .chat-toast{
+    top: 18vh;
+    left: 6vw;
+    right: auto;
+    bottom: auto;
+    max-width: 420px;
+    transform: none;
+  }
+  .live-card{
+    right: 6vw;
+    bottom: 14vh;
+    top: auto;
+  }
+}
+
