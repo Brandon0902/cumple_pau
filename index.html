@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gift para Pau – TikTok Live Room</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Kaushan+Script&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="pre-reveal"><!-- pre-reveal = fondo azul bajito -->
+
+  <!-- ====== ESCENA (oculta hasta revelar) ====== -->
+  <div class="scene">
+    <div class="wall"></div>
+    <div class="led-strip"></div>
+
+    <!-- Ventana nocturna (usa ::before/::after para estrellas/skyline) -->
+    <div class="window">
+      <div class="sunbeams"></div>
+    </div>
+
+    <div class="neon">Creadora</div>
+
+    <!-- Zócalo / piso (sin PC) -->
+    <div class="desk"></div>
+    <div class="desk-top"></div>
+
+    <!-- Ring light para TikTok -->
+    <div class="ringlight"></div>
+    <div class="tripod"></div>
+
+    <!-- Luces y deco -->
+    <div class="fairylights"></div>
+    <div class="posters">
+      <div class="poster p1">✨</div>
+      <div class="poster p2">💜</div>
+      <div class="poster p3">🌙</div>
+    </div>
+
+    <div class="shelf">
+      <div class="book b1"></div>
+      <div class="book b2"></div>
+      <div class="book b3"></div>
+      <div class="plant mini"></div>
+    </div>
+
+    <div class="plant tall"></div>
+
+    <div class="vanity">
+      <div class="mirror">
+        <div class="gloss"></div>
+        <div class="bulbs"></div>
+      </div>
+      <div class="stool"></div>
+    </div>
+
+    <div class="chair"></div>
+
+    <!-- Cama + gato gris interactivo -->
+    <div class="bed">
+      <div class="headboard"></div>
+      <div class="pillow p-left"></div>
+      <div class="pillow p-right"></div>
+      <div class="blanket"></div>
+
+      <!-- === GATO EN LA CAMA (hotspots + estructura) === -->
+      <div class="cat-area">
+        <!-- Hotspots (grid 4x4) -->
+        <div id="g1"  class="spot"></div><div id="g2"  class="spot"></div><div id="g3"  class="spot"></div><div id="g4"  class="spot"></div>
+        <div id="g5"  class="spot"></div>                                   <div id="g6"  class="spot"></div>
+        <div id="g7"  class="spot"></div>                                   <div id="g8"  class="spot"></div>
+        <div id="g9"  class="spot"></div><div id="g10" class="spot"></div><div id="g11" class="spot"></div><div id="g12" class="spot"></div>
+
+        <!-- Gato -->
+        <div id="cat" aria-label="Gato gris">
+          <div id="head">
+            <div id="ears"></div>
+            <div id="eye1" class="eye"><div class="pupil"></div></div>
+            <div id="eye2" class="eye"><div class="pupil"></div></div>
+            <div id="nose"></div>
+            <div id="mouth"></div>
+            <div id="whiskers"></div>
+          </div>
+          <div id="body"></div>
+        </div>
+      </div>
+      <!-- === /GATO === -->
+    </div>
+
+    <div class="rug"></div>
+  </div>
+
+  <!-- Canvas de confeti -->
+  <canvas id="confetti"></canvas>
+
+  <!-- Regalo -->
+  <div id="merrywrap" class="merrywrap">
+    <div class="giftbox">
+      <div class="cover"><div></div></div>
+      <div class="box"></div>
+    </div>
+
+    <!-- Hint antes de abrir -->
+    <div class="hint" id="openHint">Haz clic para abrir el regalo</div>
+
+    <!-- Mensaje “Feliz cumpleaños Pau.” -->
+    <div class="icons">
+      <div class="row">
+        <span>Feliz</span><span>cumpleaños</span><span>Pau.</span>
+      </div>
+      <div class="row"><span>🎉</span><span>🎈</span><span>✨</span><span>💖</span></div>
+    </div>
+  </div>
+
+  <!-- Capa de UI del LIVE (aparece tras revelar) -->
+  <div class="layer">
+    <div class="live-card" id="liveCard">
+      <div class="live-dot"></div>
+      <div>
+        <strong>LIVE now</strong><br>
+        <small>@itsspauu • 1.2K viewers</small>
+      </div>
+    </div>
+
+    <!-- Toast de “regalo enviado” (siempre visible tras reveal) -->
+    <div class="chat-toast" id="chatToast">
+      <div class="avatar">B</div>
+      <div class="msg">
+        <strong>🐺💎Brandon🦁🦅☀️🌻🐝</strong> envió una <em>tarjeta de felicitación ×1</em><br>
+        <span class="tiny">“eres mi anfitriona favorita”</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="./app.js"></script>
+</body>
+</html>
